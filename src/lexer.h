@@ -157,6 +157,7 @@ public:
 	double G32,G35,G36;
     int G51,G53_flag;
     double G52,G53;
+    int G60;
     
     int H10;
     double H21,H22,H23;

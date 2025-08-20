@@ -44,6 +44,9 @@ public:
     virtual void print(lexer*,dive*);
 
 private:
+    void geo_patch(lexer*,dive*,field2d&);
+    void geo_patch_read(lexer*,dive*);
+    
     void pointcheck_radius(lexer*,dive*,double*,double*,double*);
     void pointcheck_random(lexer*,dive*,double*,double*,double*);
     void setup_ijk(lexer*,dive*,double*,double*,double*,double*,double*,int,int);
@@ -69,6 +72,10 @@ private:
     double *XC,*YC;
     double *Xtemp,*Ytemp,*Ftemp;
     double **topof;
+    
+    double *GP_x,*GP_y,*GP_z;
+    int countGP,numGP;
+    double **gpf;
     
     int kx,ky;
     int ii,jj,iii,jjj;

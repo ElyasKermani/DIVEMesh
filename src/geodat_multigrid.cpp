@@ -102,6 +102,8 @@ void geodat::prolong(lexer *p, dive *a, field2d& bed)
 
     bed(i,j) = val;    
     }
+    
+    
 }
 
 

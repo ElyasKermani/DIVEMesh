@@ -44,7 +44,7 @@ void lexer::read_geodat()
         ++countG10;
         }
         G10=countG10-1;
-        cout<<"> geodat entries: "<<G10<<endl;
+        cout<<"> geo entries: "<<G10<<endl;
         geo.close();
 
         G10_x = new double[countG10];

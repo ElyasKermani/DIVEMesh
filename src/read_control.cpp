@@ -341,6 +341,9 @@ void lexer::read_control()
                         G53_flag=1;
                          clear(c,numint);
 						 break;
+                case 60: control>>G60;
+                         clear(c,numint);
+						 break;
 				}
 				break;
                 

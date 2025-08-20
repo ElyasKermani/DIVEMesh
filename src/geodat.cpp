@@ -114,6 +114,10 @@ void geodat::start(lexer* p, dive* a, field2d &bed, field &dist)
     
     dryside(p,a,bed);
     
+    // geo_patch
+    geo_patch(p,a,bed);
+    
+    
     LOOP
     dist(i,j,k) = -bed(i,j) + p->ZP[KP];
 	
