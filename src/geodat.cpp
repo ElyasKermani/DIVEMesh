@@ -115,6 +115,7 @@ void geodat::start(lexer* p, dive* a, field2d &bed, field &dist)
     dryside(p,a,bed);
     
     // geo_patch
+    if(p->G60==1)
     geo_patch(p,a,bed);
     
     

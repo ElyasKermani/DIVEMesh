@@ -100,6 +100,8 @@ void geodat::geo_patch_read(lexer *p, dive *a)
         }
 
         geo.close();
+        
+        cout<<"read geo_patch.dat finish"<<endl;
 		
 		if(p->G13>0)
 		{   
