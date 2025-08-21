@@ -65,7 +65,7 @@ geodat::geodat(lexer *p, dive *a)
     }
     
     p->Np=p->G10;
-    print(p,a);
+    print(p,a,p->Np,p->G10_x,p->G10_y,p->G10_z,1);
      
     p->Darray(XC,p->knox+14);
     p->Darray(YC,p->knoy+14);
@@ -102,21 +102,22 @@ void geodat::start(lexer* p, dive* a, field2d &bed, field &dist)
 
     holecheck(p,a,p->G10_x,p->G10_y,p->G10_z);
     }
-    
-    print(p,a);
-    
+
     
     coarsen(p,a);
+    
+    // geo_patch
+    if(p->G60==1)
+    geo_patch(p,a,p->G10_x,p->G10_y,p->G10_z,p->Np);
+    
+    print(p,a,p->Np,p->G10_x,p->G10_y,p->G10_z,1);
+    
 
     pipol->start(p,a,p->Np,p->G10_x,p->G10_y,p->G10_z,XC,YC,kx,ky,topof);
     
     prolong(p,a,bed);
     
     dryside(p,a,bed);
-    
-    // geo_patch
-    if(p->G60==1)
-    geo_patch(p,a,bed);
     
     
     LOOP

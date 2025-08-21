@@ -41,11 +41,12 @@ public:
 
     virtual void start(lexer*,dive*,field2d&,field&);
     virtual void gcb_estimate(lexer*,dive*,field2d&);
-    virtual void print(lexer*,dive*);
+    virtual void print(lexer*,dive*,int,double*,double*,double*,int);
 
 private:
-    void geo_patch(lexer*,dive*,field2d&);
+    void geo_patch(lexer*,dive*,double*&,double*&,double*&,int&);
     void geo_patch_read(lexer*,dive*);
+    double geo_patch_kernel(double);
     
     void pointcheck_radius(lexer*,dive*,double*,double*,double*);
     void pointcheck_random(lexer*,dive*,double*,double*,double*);

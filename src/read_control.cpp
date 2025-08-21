@@ -344,6 +344,12 @@ void lexer::read_control()
                 case 60: control>>G60;
                          clear(c,numint);
 						 break;
+                case 61: control>>G61;
+                         clear(c,numint);
+						 break;
+                case 62: control>>G62;
+                         clear(c,numint);
+						 break;
 				}
 				break;
                 

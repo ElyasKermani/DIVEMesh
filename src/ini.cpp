@@ -121,6 +121,8 @@ void lexer::ini_default()
     G53_flag=0;     // int turn on manual search radius
     G53=0.0;         // double manual search radius
     G60=0;           // int patch geo
+    G61=0;           // int add patch geo points
+    G62=3.0;           // double patch geo search radius factor
     
     H10=0;          // int turn on hydrodynamic coupling procedures
     H21=0.0;        // double deltax
