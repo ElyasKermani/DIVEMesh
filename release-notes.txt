@@ -1,4 +1,9 @@
 
+25.11
+x optimzed grid file writing
+x moved grid files to folder
+x added geo_patch functionality
+
 25.07
 x fixed fluvial box
 
