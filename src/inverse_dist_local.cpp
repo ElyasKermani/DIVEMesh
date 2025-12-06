@@ -55,15 +55,17 @@ double inverse_dist_local::gxy(lexer *p, dive *a, double *Fx, double *Fy, double
 
     g=0.0;
     wsum=0.0;
+    
+    int radius=3;
 
     double zmean=0.0;
     cp=0;
     do{
-        is=MAX(i-dij-cp,-3);
-        ie=MIN(i+dij+cp,Nx-3);
+        is=MAX(i-dij-cp,-radius);
+        ie=MIN(i+dij+cp,Nx-radius);
         
-        js=MAX(j-dij-cp,-3);
-        je=MIN(j+dij+cp,Ny-3);
+        js=MAX(j-dij-cp,-radius);
+        je=MIN(j+dij+cp,Ny-radius);
         
    
         zmean=0.0;
@@ -94,8 +96,9 @@ double inverse_dist_local::gxy(lexer *p, dive *a, double *Fx, double *Fy, double
         if(count>0)
         zmean=zmean/double(count);
   
-    cp+=2;
-    }while(count<MIN(19,p->Np));
+    cp+=2;//*(count+1);
+    //cout<<"IWD  cp: "<<cp<<" count: "<<count<<endl;
+    }while(count<MIN(p->G18,p->Np));
     
     if(wsum>0.0)
     g/=wsum;

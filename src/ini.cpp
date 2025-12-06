@@ -91,7 +91,8 @@ void lexer::ini_default()
 	G14_x=0.0;       // double x origin for turn angle
     G14_y=0.0;       // double y origin for turn angle
     G15=2;           // int interpolation scheme
-    G17=2;          // int dij limit
+    G17=2;          // int IDW dij limit
+    G18=14;          // int IDW number of points
     G19=0;              // int read letter in front of 3D coordinates
     G20=0;              // int auto box
     G21_x=0.0;       // double dxmin

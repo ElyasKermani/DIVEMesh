@@ -40,7 +40,7 @@ void geodat::holecheck(lexer *p, dive *a, double *X, double *Y, double *F)
     
     // Radius
     Dmax=sqrt(pow(p->xmax-p->xmin,2.0)+pow(p->ymax-p->ymin,2.0));
-    R = 0.25*Dmax*sqrt(19.0/p->Np);
+    R = 0.25*Dmax*sqrt(p->G18/p->Np);
     dij = MAX(int(R/(p->DXM)),p->G17);
     
 
