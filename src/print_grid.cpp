@@ -1035,7 +1035,6 @@ void print_grid::start(lexer* p,dive* a)
         // *********************
         XYLOOP
         if(a->subgrid(i,j,k)==count)
-        if(a->subgrid(i,j,k)==count)
         {
             ddn = a->bedlevel(i,j);
             std::memcpy(&buffer[m],&ddn,sizeof(double));
@@ -1047,7 +1046,6 @@ void print_grid::start(lexer* p,dive* a)
         if(p->solidprint>0)
         XYLOOP
         if(a->subgrid(i,j,k)==count)
-        if(a->subgrid(i,j,k)==count)
         {
             ddn = a->solidbed(i,j);
             std::memcpy(&buffer[m],&ddn,sizeof(double));
@@ -1056,7 +1054,6 @@ void print_grid::start(lexer* p,dive* a)
         
         if(p->topoprint>0)
         XYLOOP
-        if(a->subgrid(i,j,k)==count)
         if(a->subgrid(i,j,k)==count)
         {
             ddn = a->topobed(i,j);
