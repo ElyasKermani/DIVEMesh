@@ -1,4 +1,7 @@
 
+25.12
+x updated local inversed distance interpolation
+
 25.11
 x optimzed grid file writing
 x moved grid files to folder
