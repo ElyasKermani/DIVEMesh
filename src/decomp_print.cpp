@@ -24,15 +24,6 @@ Author: Hans Bihs
 
 void decomp::print_partition(lexer* p, dive* a)
 {
-    q=0;
-	NLOOP
-	{
-    SUBLOOP
-	if(a->flag(i,j,k)>0 && a->solid(i,j,k)>0)
-	++subcell[q];
-	
-	++q;
-	}
 
 	for(q=0;q<p->M10;++q)
 	ddout<<q<<" new subcell_count: "<<subcell[q]<<endl;
