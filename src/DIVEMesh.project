@@ -278,6 +278,7 @@
       </VirtualDirectory>
     </VirtualDirectory>
     <VirtualDirectory Name="Geodat">
+      <File Name="geodat_filter.cpp"/>
       <File Name="geodat_patch.cpp"/>
       <File Name="geodat_holecheck.cpp"/>
       <File Name="geodat_remove_bounds.cpp"/>

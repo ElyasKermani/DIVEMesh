@@ -24,7 +24,6 @@ Author: Hans Bihs
 #include"dive.h"
 #include"lexer.h"
 
-
 void geometry::ray_cast_z(lexer* p, dive* a, int ts, int te, intfield &flag, field &dist, field2d &bedlevel)
 {
 	double ys,ye,zs,ze;
