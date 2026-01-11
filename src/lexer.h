@@ -152,9 +152,9 @@ public:
     double G26_zh,G27_zh;
     double G21_x, G21_y, G21_z;
     double G22_x, G22_y, G22_z;
-    int G31,G37,G38,G41;
+    int G31,G32,G37,G38,G41;
     int G36_select,G37_select,G38_select,G39;
-	double G32,G34,G35,G36;
+	double G35,G36;
     int G51,G53_flag;
     double G52,G53;
     int G60,G61;

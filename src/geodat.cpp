@@ -123,6 +123,8 @@ void geodat::start(lexer* p, dive* a, field2d &bed, field &dist)
     
     dryside(p,a,bed);
     
+    filter(p,a,bed);
+    
     
     LOOP
     dist(i,j,k) = -bed(i,j) + p->ZP[KP];
@@ -188,31 +190,6 @@ void geodat::dryside(lexer *p, dive *a, field2d &bed)
     XYLOOP
     if(bed(i,j)>p->G25_h)
     bed(i,j) *= p->G25_fz;  
-    
-    // smoothing
-    k=0;
-	XYLOOP
-	if(a->flag(i,j,k)>0)
-	{
-	
-		if(a->flag(i-1,j,k)<0)
-		bed(i-1,j) = bed(i,j);
-		
-		if(a->flag(i+1,j,k)<0)
-		bed(i+1,j) = bed(i,j);
-		
-		if(a->flag(i,j-1,k)<0)
-		bed(i,j-1) = bed(i,j);
-		
-		if(a->flag(i,j+1,k)<0)
-		bed(i,j+1) = bed(i,j);
-	}
-    
-    k=0;
-	for(n=0;n<p->G31;++n)
-	XYLOOP
-	if(a->flag(i,j,k)>0)
-    bed(i,j) = p->G32*bed(i,j) + 0.25*(1.0-p->G32)*(bed(i-1,j) + bed(i+1,j) + bed(i,j-1) + bed(i,j+1)); 
 }
 
 

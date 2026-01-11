@@ -54,10 +54,12 @@ private:
     void setup_ijk_delete(lexer*,dive*,int,int);
     void remove_bounds(lexer*,dive*);
     void holecheck(lexer*,dive*,double*,double*,double*);
-    
+
     void dryside(lexer*,dive*,field2d&);
     void coarsen(lexer*,dive*);
     void prolong(lexer*,dive*,field2d&);
+    
+    void filter(lexer*,dive*,field2d&);
     
     double ccipol(lexer*, double**, double, double);
     double lint(lexer*, double**, int&,int&, double, double);
