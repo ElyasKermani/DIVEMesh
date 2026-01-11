@@ -20,8 +20,8 @@ along with this program; if not, see <http://www.gnu.org/licenses/>.
 Author: Hans Bihs
 --------------------------------------------------------------------*/
 
-#ifndef INVERSE_DIST_LOCAL_H_
-#define INVERSE_DIST_LOCAL_H_
+#ifndef GAUSSIAN_H_
+#define GAUSSIAN_H_
 
 #include"interpolation.h"
 #include"increment.h"
@@ -31,11 +31,11 @@ class dive;
 
 using namespace std;
 
-class inverse_dist_local : public interpolation, public increment
+class gaussian : public interpolation, public increment
 {
 public:
-    inverse_dist_local(lexer*,dive*);
-    virtual ~inverse_dist_local();
+    gaussian(lexer*,dive*);
+    virtual ~gaussian();
 
     virtual void start(lexer*,dive*,int,double*,double*,double*,double*,double*,int,int,double**);
     virtual double gxy(lexer*,dive*,double*,double*,double*,double*,double*,int,int,double**);
@@ -55,11 +55,13 @@ private:
     int r,s,t,ic,jc,kp,dd;
     int is,ie,js,je;
     
+    double rx,ry,r2;
+    double sigma,cutoff;
+    
     
 
     double g,wsum,dist,weight;
     double xc,yc;
-    double smooth_length;
 
 };
 

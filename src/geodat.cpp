@@ -26,6 +26,7 @@ Author: Hans Bihs
 #include"inverse_dist.h"
 #include"inverse_dist_local.h"
 #include"kriging.h"
+#include"gaussian.h"
 
 geodat::geodat(lexer *p, dive *a)
 {
@@ -63,6 +64,9 @@ geodat::geodat(lexer *p, dive *a)
     p->G36_select=1;
     pipol = new kriging(p,a,p->G10,p->G10_x,p->G10_y,p->G10_z);
     }
+    
+    if(p->G15==5)
+    pipol = new gaussian(p,a);
     
     p->Np=p->G10;
     print(p,a,p->Np,p->G10_x,p->G10_y,p->G10_z,1);

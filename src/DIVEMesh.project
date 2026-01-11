@@ -54,6 +54,7 @@
     </VirtualDirectory>
     <VirtualDirectory Name="Geodat">
       <VirtualDirectory Name="Interpolation">
+        <File Name="gaussian.h"/>
         <File Name="kriging.h"/>
         <File Name="inverse_dist_local.h"/>
         <File Name="inverse_dist.h"/>
@@ -278,6 +279,11 @@
       </VirtualDirectory>
     </VirtualDirectory>
     <VirtualDirectory Name="Geodat">
+      <VirtualDirectory Name="Gaussian Kernel">
+        <File Name="gaussian_setup.cpp"/>
+        <File Name="gaussian_kernel.cpp"/>
+        <File Name="gaussian.cpp"/>
+      </VirtualDirectory>
       <File Name="geodat_patch.cpp"/>
       <File Name="geodat_holecheck.cpp"/>
       <File Name="geodat_remove_bounds.cpp"/>

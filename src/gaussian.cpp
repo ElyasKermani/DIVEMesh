@@ -20,19 +20,23 @@ along with this program; if not, see <http://www.gnu.org/licenses/>.
 Author: Hans Bihs
 --------------------------------------------------------------------*/
 
-#include"inverse_dist_local.h"
+#include"gaussian.h"
 #include"dive.h"
 #include"lexer.h"
 
-inverse_dist_local::inverse_dist_local(lexer *p, dive *a) 
+gaussian::gaussian(lexer *p, dive *a) 
+{
+    sigma=5.0*p->DXM;
+    
+    cutoff  = 3.0*sigma;
+    
+}
+
+gaussian::~gaussian()
 {
 }
 
-inverse_dist_local::~inverse_dist_local()
-{
-}
-
-void inverse_dist_local::start(lexer *p, dive *a, int numpt, double *Fx, double *Fy, double *Fz, double *XC, double *YC, int kx, int ky, double **f)
+void gaussian::start(lexer *p, dive *a, int numpt, double *Fx, double *Fy, double *Fz, double *XC, double *YC, int kx, int ky, double **f)
 {
     setup(p,a,Fx,Fy,Fz,XC,YC,kx,ky);
     
@@ -48,7 +52,7 @@ void inverse_dist_local::start(lexer *p, dive *a, int numpt, double *Fx, double 
     }
 }
 
-double inverse_dist_local::gxy(lexer *p, dive *a, double *Fx, double *Fy, double *Fz, double *XC, double *YC, int kx, int ky, double **f)
+double gaussian::gxy(lexer *p, dive *a, double *Fx, double *Fy, double *Fz, double *XC, double *YC, int kx, int ky, double **f)
 {    
     xc = XC[IP];
     yc = YC[JP];
@@ -77,17 +81,19 @@ double inverse_dist_local::gxy(lexer *p, dive *a, double *Fx, double *Fy, double
                 for(t=0;t<ptnum[r+dd][s+dd];++t)
                 {
                     q = ptid[r+dd][s+dd][t];
-                    
-                    smooth_length = p->G34*p->DXM;
                 
-                    dist = sqrt(pow(xc-Fx[q],2.0) + pow(yc-Fy[q],2.0) + pow(smooth_length*smooth_length,2.0));
-
-                    // interpolation loop                    
-                    if(w>=1.0e-10)
-                    w = pow(1.0/dist,p->G35);
+                    dist = sqrt(pow(xc-Fx[q],2.0) + pow(yc-Fy[q],2.0));
                     
-                    else if(w<1.0e-10)
-                    w = pow((dist>1.0e-10?dist:1.0e10),p->G35);
+                    rx = xc-Fx[q];
+                    ry = yc-Fy[q];
+                    r2 = rx*rx + ry*ry;
+                    
+                    //if(w<1.0e-15)
+                    //cout<<"GEO smal w !!!!!!!! %%%%%%%"<<endl;
+                    
+                    //if(r2<cutoff)
+                    //{
+                    w = exp(-r2 / (2.0*sigma*sigma));
                     
                     wsum+=w;
                     
@@ -95,8 +101,9 @@ double inverse_dist_local::gxy(lexer *p, dive *a, double *Fx, double *Fy, double
                     
                     ++count;
                     zmean+=Fz[q];
-                    
+                    //}
                 }
+                    
                 
             }
 
