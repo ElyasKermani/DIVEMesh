@@ -279,6 +279,7 @@
       </VirtualDirectory>
     </VirtualDirectory>
     <VirtualDirectory Name="Geodat">
+      <File Name="geodat_filter.cpp"/>
       <VirtualDirectory Name="Gaussian Kernel">
         <File Name="gaussian_setup.cpp"/>
         <File Name="gaussian_kernel.cpp"/>

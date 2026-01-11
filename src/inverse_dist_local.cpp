@@ -83,11 +83,7 @@ double inverse_dist_local::gxy(lexer *p, dive *a, double *Fx, double *Fy, double
                     dist = sqrt(pow(xc-Fx[q],2.0) + pow(yc-Fy[q],2.0) + pow(smooth_length*smooth_length,2.0));
 
                     // interpolation loop                    
-                    if(w>=1.0e-10)
-                    w = pow(1.0/dist,p->G35);
-                    
-                    else if(w<1.0e-10)
-                    w = pow((dist>1.0e-10?dist:1.0e10),p->G35);
+                    w = pow(1.0/(dist>1.0e-15?dist:1.0e15),p->G35);
                     
                     wsum+=w;
                     
