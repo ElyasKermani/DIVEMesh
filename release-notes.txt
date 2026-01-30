@@ -1,4 +1,8 @@
 
+26.01
+x added spatial geodat filter
+x added Gaussian kernel geodat interpolation
+
 25.12
 x updated local inversed distance interpolation
 
