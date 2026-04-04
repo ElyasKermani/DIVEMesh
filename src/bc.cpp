@@ -40,6 +40,12 @@ void bc::makebc(lexer* p, dive* a)
     outflow = p->C14;
     bottom = p->C15;
     top = p->C16;
+    
+    if(p->knoy==1)
+    {
+    right = 3;
+    left = 3;
+    }
 
     LOOP
     if(a->flag(i,j,k)>0)
