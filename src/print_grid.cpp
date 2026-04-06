@@ -402,6 +402,26 @@ void print_grid::start(lexer* p,dive* a)
         std::memcpy(&buffer[m],&iin,sizeof(int));
         m+=sizeof(int);
         
+        ddn = p->global_orig_x;
+        std::memcpy(&buffer[m],&ddn,sizeof(double));
+        m+=sizeof(double);
+        ddn = p->global_orig_y;
+        std::memcpy(&buffer[m],&ddn,sizeof(double));
+        m+=sizeof(double);
+        ddn = p->alpha_grid;
+        std::memcpy(&buffer[m],&ddn,sizeof(double));
+        m+=sizeof(double);
+        
+        ddn = 0.0; // dead
+        std::memcpy(&buffer[m],&ddn,sizeof(double));
+        m+=sizeof(double);
+        ddn = 0.0; // dead
+        std::memcpy(&buffer[m],&ddn,sizeof(double));
+        m+=sizeof(double);
+        ddn = 0.0; // dead
+        std::memcpy(&buffer[m],&ddn,sizeof(double));
+        m+=sizeof(double);
+        
         // ---------------------------------------------------------------------------------------------------------------------
         // FLAG
 

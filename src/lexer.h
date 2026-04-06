@@ -81,9 +81,12 @@ public:
     double xmin,ymin,zmin;
     double dx;
     
+    double global_orig_x,global_orig_y;
+    double alpha_grid;
+    
     int Np;
 
-    double B1;
+    double B1,B4;
     int B2;
     int B2_knox,B2_knoy,B2_knoz;
     int B5,B10;

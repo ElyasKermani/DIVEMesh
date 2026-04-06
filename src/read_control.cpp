@@ -69,10 +69,13 @@ void lexer::read_control()
                         B2=1;
                         clear(c,numint);
 						 break;
-               case 5: control>>B5;
+                case 4: control>>B4;
                          clear(c,numint);
 						 break;
-				case 10: ++B10;
+                case 5: control>>B5;
+                         clear(c,numint);
+						 break;
+                case 10: ++B10;
                          clear(c,numint);
 						 break;
                 case 22: ++B22;
