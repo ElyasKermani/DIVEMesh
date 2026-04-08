@@ -33,6 +33,9 @@ void lexer::ini_default()
 
     B1=0.0;         // double deltax
     B2=0;           // int cell size
+    B3=0;           // int global origin
+    B3_dx=0.0;      // int global origin_x
+    B3_dy=0.0;      // int global origin_y
     B2_knox=0;
     B2_knoy=0;
     B2_knoz=0;
