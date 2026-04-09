@@ -456,29 +456,6 @@ void print_grid::start(lexer* p,dive* a)
         }
 
         // ---------------------------------------------------------------------------------------------------------------------
-        // Nodes RST
-        SNODEILOOP
-        {
-            ddn = p->RN[IP];
-            std::memcpy(&buffer[m],&ddn,sizeof(double));
-            m+=sizeof(double);
-        }
-        
-        SNODEJLOOP
-        {
-            ddn = p->SN[JP];
-            std::memcpy(&buffer[m],&ddn,sizeof(double));
-            m+=sizeof(double);
-        }
-        
-        SNODEKLOOP
-        {
-            ddn = p->TN[KP];
-            std::memcpy(&buffer[m],&ddn,sizeof(double));
-            m+=sizeof(double);
-        }
-
-        // ---------------------------------------------------------------------------------------------------------------------
         // solid_dist
         
         if(p->solidprint==1)

@@ -404,9 +404,6 @@ public:
     double DXM,DXYM;
     double DR,DS,DT;
     
-    double *SN,*RN,*TN;
-    double *SP,*RP,*TP;
-    
 
 private:
 
