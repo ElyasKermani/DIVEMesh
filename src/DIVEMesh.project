@@ -76,6 +76,9 @@
         <File Name="print_stl.h"/>
       </VirtualDirectory>
       <VirtualDirectory Name="Grid">
+        <VirtualDirectory Name="Coordinates">
+          <File Name="coordinates.h"/>
+        </VirtualDirectory>
         <File Name="looping.h"/>
         <File Name="iterators.h"/>
         <File Name="increment.h"/>
@@ -228,6 +231,9 @@
     <VirtualDirectory Name="Main">
       <File Name="driver.cpp"/>
       <VirtualDirectory Name="Grid">
+        <VirtualDirectory Name="Coordinates">
+          <File Name="coordinates.cpp"/>
+        </VirtualDirectory>
         <File Name="increment.cpp"/>
         <VirtualDirectory Name="Field">
           <File Name="field.cpp"/>
@@ -252,6 +258,7 @@
       <File Name="ini.cpp"/>
       <File Name="lexer.cpp"/>
       <VirtualDirectory Name="Lexer">
+        <File Name="lexer_origin.cpp"/>
         <File Name="read_topo.cpp"/>
         <File Name="read_stl.cpp"/>
         <VirtualDirectory Name="Grid Spacing">

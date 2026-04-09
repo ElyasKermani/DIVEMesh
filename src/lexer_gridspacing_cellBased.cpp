@@ -20,7 +20,7 @@ along with this program; if not, see <http://www.gnu.org/licenses/>.
 Author: Tobias Martin
 --------------------------------------------------------------------*/
 
-#include "lexer.h"
+#include"lexer.h"
 #include <vector>
 #include <algorithm>
 

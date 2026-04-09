@@ -24,9 +24,16 @@ Author: Hans Bihs
 
 using namespace std;
 
-lexer::lexer() 
+lexer::lexer() : coordinates(this)
 {
+}
 
+lexer::~lexer()
+{
+}
+
+void lexer::read_input()
+{
     ini_default();
 	
     read_control();
@@ -35,7 +42,11 @@ lexer::lexer()
     
     if(S1==1)
 	pre_read_stl();
-    
+}
+
+void lexer::read_preproc()
+{
+    origin_calc();
     createspace();
     
     gridspacing();
@@ -44,15 +55,7 @@ lexer::lexer()
     topo_preproc();
     
     tri_space();
-    
-	
 }
-
-lexer::~lexer()
-{
-
-}
-
 
 
 

@@ -30,16 +30,20 @@ Author: Hans Bihs
 #include"resize.h"
 #include"field.h"
 #include"increment.h"
+#include"coordinates.h"
 #include<stdlib.h>
 
 using namespace std;
 
-class lexer : public resize_class, public increment
+class lexer : public resize_class, public coordinates
 {
 public:
 
 	lexer();
 	virtual ~lexer();
+    
+    void read_input();
+    void read_preproc();
 
 	void read_control();
 	void read_geodat();
@@ -47,6 +51,8 @@ public:
 	void read_stl();
     void pre_read_stl();
 	void clear(char&, int&);
+    
+    void origin_calc();
 	void solid_preproc();
     void topo_preproc();
     void gridspacing();

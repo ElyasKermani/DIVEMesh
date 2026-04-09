@@ -1,10 +1,10 @@
 /*--------------------------------------------------------------------
-DIVEMesh
+REEF3D
 Copyright 2008-2026 Hans Bihs
 
-This file is part of DIVEMesh.
+This file is part of REEF3D.
 
-DIVEMesh is free software; you can redistribute it and/or modify it
+REEF3D is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 3 of the License, or
 (at your option) any later version.
@@ -20,15 +20,50 @@ along with this program; if not, see <http://www.gnu.org/licenses/>.
 Author: Hans Bihs
 --------------------------------------------------------------------*/
 
-#include"main.h"
+#include"coordinates.h"
+#include"lexer.h"
 
-using namespace std;
+coordinates::coordinates(lexer *pp) 
+{	
+    p=pp;
+}
 
-
-int main()
+coordinates::~coordinates()
 {
+}
 
-    driver drive;
+double coordinates::xin(double xworld)
+{
+    double xmodel=xworld;
+    
+    
+    
+    return xmodel;
+}
 
-	return 0;
+double coordinates::yin(double yworld)
+{
+    double ymodel=yworld;
+    
+    
+    
+    return ymodel;
+}
+
+double coordinates::xout(double xmodel)
+{
+    double xworld=xmodel;
+    
+    
+    
+    return xworld;
+}
+
+double coordinates::yout(double ymodel)
+{
+    double yworld=ymodel;
+    
+    
+    
+    return yworld;
 }

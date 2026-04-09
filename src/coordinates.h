@@ -20,15 +20,48 @@ along with this program; if not, see <http://www.gnu.org/licenses/>.
 Author: Hans Bihs
 --------------------------------------------------------------------*/
 
-#include"main.h"
+#ifndef COORDINATES_H_
+#define COORDINATES_H_
+
+#include"increment.h"
+#include"intfield.h"
+
+class lexer;
+class dive;
+class field;
+class field2d;
 
 using namespace std;
 
-
-int main()
+class coordinates : public increment
 {
+public:
+    coordinates(lexer*);
+	virtual ~coordinates();
+    
+    // world to model
+    double xin(double);
+    double yin(double);
+    
+    // model to world
+    double xout(double);
+    double yout(double);
+    
 
-    driver drive;
+    
+    
+private:
+    lexer *p;
+    
+    double pos;
+    
+    int stop,count;
+    int ii,jj,kk;
+    
+    int is,ie,iloc;
+    int js,je,jloc;
+    int ks,ke,kloc;
 
-	return 0;
-}
+};
+
+#endif
