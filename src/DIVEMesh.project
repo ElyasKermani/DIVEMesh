@@ -258,6 +258,7 @@
       <File Name="ini.cpp"/>
       <File Name="lexer.cpp"/>
       <VirtualDirectory Name="Lexer">
+        <File Name="read_control_preread.cpp"/>
         <File Name="lexer_origin.cpp"/>
         <File Name="read_topo.cpp"/>
         <File Name="read_stl.cpp"/>

@@ -45,6 +45,7 @@ public:
     void read_input();
     void read_preproc();
 
+    void read_control_preread();
 	void read_control();
 	void read_geodat();
 	void read_data();

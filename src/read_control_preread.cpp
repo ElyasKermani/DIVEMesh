@@ -21,49 +21,13 @@ Author: Hans Bihs
 --------------------------------------------------------------------*/
 
 #include"lexer.h"
+#include <fstream>
 
-using namespace std;
-
-lexer::lexer() : coordinates(this)
+void lexer::read_control_preread()
 {
+    
+    
+    
+    
+    
 }
-
-lexer::~lexer()
-{
-}
-
-void lexer::read_input()
-{
-    ini_default();
-    
-    read_control_preread();
-	
-    read_control();
-	read_geodat();
-	read_data();
-    
-    if(S1==1)
-	pre_read_stl();
-}
-
-void lexer::read_preproc()
-{
-    origin_calc();
-    createspace();
-    
-    gridspacing();
-    
-	solid_preproc();
-    topo_preproc();
-    
-    tri_space();
-}
-
-
-
-
-
-
-
-
-
