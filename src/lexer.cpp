@@ -36,7 +36,7 @@ void lexer::read_input()
 {
     ini_default();
     
-    read_control_preread();
+    //read_control_preread();
 	
     read_control();
 	read_geodat();
