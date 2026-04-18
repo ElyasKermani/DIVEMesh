@@ -111,7 +111,7 @@ void lexer::ini_default()
     G26=0;          // int remove all points below a threshold zh
     G27=0;          // int remove all points above a threshold zh
     G31=0;          // int number of outer filter iterations
-    G32=1;          // int number of inner filter iterations
+    G32=0;          // int number of inner filter iterations
     G34=0.0;        // double smoothing length IDW
 	G35=16.0;		// double inverse distance factor
     G36=1.0;        // doulble duplicate points factor times DXM
