@@ -36,19 +36,21 @@ void lexer::read_input()
 {
     ini_default();
     
-    //read_control_preread();
+    read_control_preread();
+    
+    if(S1==1)
+	pre_read_stl();
+    
+    origin_calc();
 	
     read_control();
 	read_geodat();
 	read_data();
-    
-    if(S1==1)
-	pre_read_stl();
 }
 
 void lexer::read_preproc()
 {
-    origin_calc();
+    
     createspace();
     
     gridspacing();

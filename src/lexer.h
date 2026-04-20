@@ -100,14 +100,6 @@ public:
     double B3_dx,B3_dy;
     int B5,B10;
     double *B10_xs,*B10_xe,*B10_ys,*B10_ye,*B10_zs,*B10_ze;
-    int B22;
-    double *B22_xm, *B22_ym, *B22_zm,  *B22_r;
-    int B31;
-    double *B31_xs, *B31_xe, *B31_ym, *B31_zm, *B31_r;
-    int B32;
-    double *B32_ys, *B32_ye, *B32_xm, *B32_zm, *B32_r;
-    int B33;
-    double *B33_zs, *B33_ze, *B33_xm, *B33_ym, *B33_r;
     
     int B101,B102,B103;
     double B111,B112,B113;

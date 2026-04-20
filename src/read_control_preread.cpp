@@ -60,96 +60,9 @@ void lexer::read_control_preread()
                           B3=1;
                           clear(c,numint);
 						 break;
-                case 4: control>>B4;
-                          clear(c,numint);
-						 break;
-                case 5: control>>B5;
-                          clear(c,numint);
-						 break;
                 case 10: ++B10;
                           clear(c,numint);
 						 break;
-                case 22: ++B22;
-						 clear(c,numint);
-						 break;
-                case 31: ++B31;
-						 clear(c,numint);
-						 break;
-                case 32: ++B32;
-						 clear(c,numint);
-						 break;
-                case 33: ++B33;
-						 clear(c,numint);
-						 break;
-                case 101: control>>B101;
-						 clear(c,numint);
-						 break;
-                case 102: control>>B102;
-						 clear(c,numint);
-						 break;
-                case 103: control>>B103;
-						 clear(c,numint);
-						 break;
-                case 111: control>>B111;
-						 clear(c,numint);
-						 break;
-                case 112: control>>B112;
-						 clear(c,numint);
-						 break;
-                case 113: control>>B113;
-						 clear(c,numint);
-						 break;
-                case 114: control>>B114_x;
-                        B114=1;
-						 clear(c,numint);
-						 break;
-                case 115: control>>B115_y;
-                        B115=1;
-						 clear(c,numint);
-						 break;
-                case 116: control>>B116_z;
-                        B116=1;
-						 clear(c,numint);
-						 break;
-                case 121: control>>B121_N1>>B121_x1>>B121_N2>>B121_x2>>B121_N3;
-                        B121=1;
-						 clear(c,numint);
-                        break;
-                case 122: control>>B122_N1>>B122_y1>>B122_N2>>B122_y2>>B122_N3;
-                        B122=1;
-						 clear(c,numint);
-                        break;
-                case 123: control>>B123_N1>>B123_z1>>B123_N2>>B123_z2>>B123_N3;
-                        B123=1;
-						 clear(c,numint);
-                        break;
-                case 124: control>>B124_N1>>B124_x1>>B124_f1>>B124_N2>>B124_x2>>B124_f2>>B124_N3>>B124_x3>>B124_f3;
-                        B124=1;
-						 clear(c,numint);
-						 break;
-                case 125: control>>B125_N1>>B125_y1>>B125_f1>>B125_N2>>B125_y2>>B125_f2>>B125_N3>>B125_y3>>B125_f3;
-                        B125=1;
-						 clear(c,numint);
-						 break;
-                case 126: control>>B126_N1>>B126_z1>>B126_f1>>B126_N2>>B126_z2>>B126_f2>>B126_N3>>B126_z3>>B126_f3;
-                        B126=1;
-						 clear(c,numint);
-						 break;
-                case 127: control>>B127_dx_min>>B127_dx_max>>B127_pf>>B127_df>>B127_r;
-                        B127=1;
-						 clear(c,numint);
-						 break;
-                case 128: control>>B128_dx_min>>B128_dx_max>>B128_pf>>B128_df>>B128_r;
-                        B128=1;
-						 clear(c,numint);
-						 break;   
-                case 129: control>>B129_dx_min>>B129_dx_max>>B129_pf>>B129_df>>B129_r;
-                        B129=1;
-						 clear(c,numint);
-						 break;  
-				case 130: control>>B130;
-						 clear(c,numint);
-						 break;                      
 				}
 				break;
                 
@@ -234,5 +147,38 @@ void lexer::read_control_preread()
 	}
 	control.close();
 	control.clear();
+    
+    // re-read
+    Darray(B10_xs,B10);
+	Darray(B10_xe,B10);
+	Darray(B10_ys,B10);
+	Darray(B10_ye,B10);
+	Darray(B10_zs,B10);
+	Darray(B10_ze,B10);
+    
+    int countB10=0;
+    
+    
+    control.open("control.txt", ios_base::in);
+	while(!control.eof())
+	{
+		control>>c;
+		switch(c)
+		{
+		    case 'B': control>>numint;
+				switch(numint)
+				{
+
+                case 10: control>>B10_xs[countB10]>>B10_xe[countB10]>>B10_ys[countB10]>>B10_ye[countB10]>>B10_zs[countB10]>>B10_ze[countB10];
+                        ++countB10;
+						 clear(c,numint);
+						 break;
+				}
+				break;
+                
+		}
+	}
+
+	control.close();
 	
 }

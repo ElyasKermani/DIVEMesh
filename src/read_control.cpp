@@ -29,12 +29,6 @@ void lexer::read_control()
 	int numint,numval;
     int count;
 	numlinsurf=0;
-
-    B10=0;
-    B22=0;
-    B31=0;
-    B33=0;
-	S10=0;
 	
 	cout<<"read control"<<endl;
 
@@ -69,31 +63,19 @@ void lexer::read_control()
                         B2=1;
                           clear(c,numint);
 						 break;
-                case 3: control>>B3_dx>>B3_dy;
+                /*case 3: control>>B3_dx>>B3_dy;
                         B3=1;
                           clear(c,numint);
-						 break;
+						 break;*/
                 case 4: control>>B4;
                           clear(c,numint);
 						 break;
                 case 5: control>>B5;
                           clear(c,numint);
 						 break;
-                case 10: ++B10;
+                /*case 10: ++B10;
                           clear(c,numint);
-						 break;
-                case 22: ++B22;
-						 clear(c,numint);
-						 break;
-                case 31: ++B31;
-						 clear(c,numint);
-						 break;
-                case 32: ++B32;
-						 clear(c,numint);
-						 break;
-                case 33: ++B33;
-						 clear(c,numint);
-						 break;
+						 break;*/
                 case 101: control>>B101;
 						 clear(c,numint);
 						 break;
@@ -877,38 +859,6 @@ void lexer::read_control()
 	}
 	control.close();
 	control.clear();
-
-	// re-read
-	
-	Darray(B10_xs,B10);
-	Darray(B10_xe,B10);
-	Darray(B10_ys,B10);
-	Darray(B10_ye,B10);
-	Darray(B10_zs,B10);
-	Darray(B10_ze,B10);
-	
-	Darray(B22_xm,B22);
-	Darray(B22_ym,B22);
-	Darray(B22_zm,B22);
-	Darray(B22_r,B22);
-	
-	Darray(B31_xs,B31);
-	Darray(B31_xe,B31);
-	Darray(B31_ym,B31);
-	Darray(B31_zm,B31);
-	Darray(B31_r,B31);
-	
-	Darray(B32_ys,B32);
-	Darray(B32_ye,B32);
-	Darray(B32_xm,B32);
-	Darray(B32_zm,B32);
-	Darray(B32_r,B32);
-	
-	Darray(B33_zs,B33);
-	Darray(B33_ze,B33);
-	Darray(B33_xm,B33);
-	Darray(B33_ym,B33);
-	Darray(B33_r,B33);
     
     Iarray(M31,M30_x);
     Iarray(M32,M30_y);
@@ -1280,11 +1230,7 @@ void lexer::read_control()
     Darray(T340_N,T340);
     Darray(T340_ds,T340);
 
-    int countB10=0;
-    int countB22=0;
-    int countB31=0;
-    int countB32=0;
-    int countB33=0;
+    
 	int countS10=0;
 	int countS11=0;
     int countS12=0;
@@ -1357,33 +1303,6 @@ void lexer::read_control()
 		control>>c;
 		switch(c)
 		{
-		    case 'B': control>>numint;
-				switch(numint)
-				{
-
-                case 10: control>>B10_xs[countB10]>>B10_xe[countB10]>>B10_ys[countB10]>>B10_ye[countB10]>>B10_zs[countB10]>>B10_ze[countB10];
-                        ++countB10;
-						 clear(c,numint);
-						 break;
-                case 22: control>>B22_xm[countB22]>>B22_ym[countB22]>>B22_zm[countB22]>>B22_r[countB22];
-                        ++countB22;
-						 clear(c,numint);
-						 break;
-                case 31: control>>B31_xs[countB31]>>B31_xe[countB31]>>B31_ym[countB31]>>B31_zm[countB31]>>B31_r[countB31];
-                        ++countB31;
-						 clear(c,numint);
-						 break;
-                case 32: control>>B32_ys[countB32]>>B32_ye[countB32]>>B32_xm[countB32]>>B32_zm[countB32]>>B32_r[countB32];
-                        ++countB32;
-						 clear(c,numint);
-						 break;
-                case 33: control>>B33_zs[countB33]>>B33_ze[countB33]>>B33_xm[countB33]>>B33_ym[countB33]>>B33_r[countB33];
-                        ++countB33;
-						 clear(c,numint);
-						 break;
-				}
-				break;
-                
                 
                 case 'M': control>>numint;
 				switch(numint)

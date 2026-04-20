@@ -49,56 +49,6 @@ void lexer::origin_calc()
     ymax=MAX(ymax,B10_ye[qn]);
     zmax=MAX(zmax,B10_ze[qn]);
     }
-
-    for(qn=0;qn<B22;++qn)
-    {
-    xmin=MIN(xmin,B22_xm[qn]-B22_r[qn])-dx;
-    ymin=MIN(ymin,B22_ym[qn]-B22_r[qn])-dx;
-    zmin=MIN(zmin,B22_zm[qn]-B22_r[qn])-dx;
-
-    xmax=MAX(xmax,B22_xm[qn]+B22_r[qn])+dx;
-    ymax=MAX(ymax,B22_ym[qn]+B22_r[qn])+dx;
-    zmax=MAX(zmax,B22_zm[qn]+B22_r[qn])+dx;
-    }
-
-    for(qn=0;qn<B31;++qn)
-    {
-    xmin=MIN(xmin,B31_xs[qn]);
-    xmin=MIN(xmin,B31_xe[qn]);
-    ymin=MIN(ymin,B31_ym[qn]-B31_r[qn])-dx;
-    zmin=MIN(zmin,B31_zm[qn]-B31_r[qn])-dx;
-
-    xmax=MAX(xmax,B31_xs[qn]);
-    xmax=MAX(xmax,B31_xe[qn]);
-    ymax=MAX(ymax,B31_ym[qn]+B31_r[qn])+dx;
-    zmax=MAX(zmax,B31_zm[qn]+B31_r[qn])+dx;
-    }
-
-    for(qn=0;qn<B32;++qn)
-    {
-    xmin=MIN(xmin,B32_xm[qn]-B32_r[qn])-dx;
-    ymin=MIN(ymin,B32_ys[qn]);
-    ymin=MIN(ymin,B32_ye[qn]);
-    zmin=MIN(zmin,B32_zm[qn]-B32_r[qn])-dx;
-
-    xmax=MAX(xmax,B32_xm[qn]+B32_r[qn])+dx;
-    ymax=MAX(ymax,B32_ys[qn]);
-    ymax=MAX(ymax,B32_ye[qn]);
-    zmax=MAX(zmax,B32_zm[qn]+B32_r[qn])+dx;
-    }
-
-    for(qn=0;qn<B33;++qn)
-    {
-    xmin=MIN(xmin,B33_xm[qn]-B33_r[qn])-dx;
-    ymin=MIN(ymin,B33_ym[qn]-B33_r[qn])-dx;
-    zmin=MIN(zmin,B33_zs[qn]);
-    zmin=MIN(zmin,B33_ze[qn]);
-
-    xmax=MAX(xmax,B33_xm[qn]+B33_r[qn])+dx;
-    ymax=MAX(ymax,B33_ym[qn]+B33_r[qn])+dx;
-    zmax=MAX(zmax,B33_zs[qn]);
-    zmax=MAX(zmax,B33_ze[qn]);
-    }
     
     if(S1==1 && S2==1)
     {
