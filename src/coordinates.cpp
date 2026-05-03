@@ -32,25 +32,26 @@ coordinates::~coordinates()
 {
 }
 
-double coordinates::xin(double xworld)
+double coordinates::Xin(double xworld, double yworld)
 {
     double xmodel=xworld;
     
-    
+    //xmodel = tri_x[n][q]*cos(S8) - tri_y[n][q]*sin(S8);
     
     return xmodel;
 }
 
-double coordinates::yin(double yworld)
+double coordinates::Yin(double xworld, double yworld)
 {
     double ymodel=yworld;
     
     
+	//yval = tri_x[n][q]*sin(S8) + tri_y[n][q]*cos(S8);
     
     return ymodel;
 }
 
-double coordinates::xout(double xmodel)
+double coordinates::Xout(double xmodel, double ymodel)
 {
     double xworld=xmodel;
     
@@ -59,7 +60,7 @@ double coordinates::xout(double xmodel)
     return xworld;
 }
 
-double coordinates::yout(double ymodel)
+double coordinates::Yout(double xmodel, double ymodel)
 {
     double yworld=ymodel;
     

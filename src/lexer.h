@@ -54,6 +54,7 @@ public:
 	void clear(char&, int&);
     
     void origin_calc();
+    void origin_apply();
 	void solid_preproc();
     void topo_preproc();
     void gridspacing();
