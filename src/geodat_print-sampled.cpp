@@ -44,7 +44,7 @@ void geodat::print_sampled(lexer* p, dive* a)
     
     for(n=0;n<p->Np;++n)
     {
-    result<<p->G10_x[n]<<" "<<p->G10_y[n]<<" "<<p->G10_z[n]<<endl;
+    result<<p->Xout(p->G10_x[n],p->G10_x[n])<<" "<<p->Yout(p->G10_x[n],p->G10_x[n])<<" "<<p->G10_z[n]<<endl;
     }
     
     
