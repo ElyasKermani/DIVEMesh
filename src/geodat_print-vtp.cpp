@@ -136,7 +136,7 @@ void geodat::print(lexer* p, dive* a, int Np, double *Fx, double *Fy, double *Fz
     result.write((char*)&iin, sizeof (int));
 	for(n=0;n<Np;++n)
 	{
-	ffn=float(Fx[n]);
+	ffn=float(p->Xout(Fx[n],Fy[n]));
 	result.write((char*)&ffn, sizeof (float));
 	}
     
@@ -145,7 +145,7 @@ void geodat::print(lexer* p, dive* a, int Np, double *Fx, double *Fy, double *Fz
     result.write((char*)&iin, sizeof (int));
 	for(n=0;n<Np;++n)
 	{
-	ffn=float(Fy[n]);
+	ffn=float(p->Yout(Fx[n],Fy[n]));
 	result.write((char*)&ffn, sizeof (float));
 	}
     
@@ -164,10 +164,10 @@ void geodat::print(lexer* p, dive* a, int Np, double *Fx, double *Fy, double *Fz
 	result.write((char*)&iin, sizeof (int));
     for(n=0;n<Np;++n)
 	{
-	ffn=float(Fx[n]);
+	ffn=float(p->Xout(Fx[n],Fy[n]));
 	result.write((char*)&ffn, sizeof (float));
 
-	ffn=float(Fy[n]);
+	ffn=float(p->Yout(Fx[n],Fy[n]));
 	result.write((char*)&ffn, sizeof (float));
 
 	ffn=float(Fz[n]);

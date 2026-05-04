@@ -60,6 +60,10 @@ void lexer::read_control_preread()
                           B3=1;
                           clear(c,numint);
 						 break;
+                case 4: control>>B4;
+                          alpha_grid = (PI/180.0)*B4;
+                          clear(c,numint);
+						 break;
                 case 10: ++B10;
                           clear(c,numint);
 						 break;

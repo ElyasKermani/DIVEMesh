@@ -70,11 +70,11 @@ void lexer::origin_apply()
 {
     for(qn=0;qn<B10;++qn)
     {
-    B10_xs[qn] = Xin(B10_xs[qn],B10_ys[qn]);
-    B10_xe[qn] = Xin(B10_xe[qn],B10_ye[qn]);
+    B10_xs[qn] -= global_orig_x;
+    B10_xe[qn] -= global_orig_x;
     
-    B10_ys[qn] = Yin(B10_xs[qn],B10_ys[qn]);
-    B10_ye[qn] = Yin(B10_xe[qn],B10_ye[qn]);
+    B10_ys[qn] -= global_orig_y;
+    B10_ye[qn] -= global_orig_y;
     }
 
 }

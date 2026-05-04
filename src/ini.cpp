@@ -39,7 +39,7 @@ void lexer::ini_default()
     B2_knox=0;
     B2_knoy=0;
     B2_knoz=0;
-    B4=0.0;         // double grid rotation
+    B4=0.0;         // double grid rotation alpha
 	B5=1;			// int turn on true 2D
     B10=0;
     B101=0;         // int grid spacing xdir

@@ -67,9 +67,10 @@ void lexer::read_control()
                         B3=1;
                           clear(c,numint);
 						 break;*/
-                case 4: control>>B4;
+                /*case 4: control>>B4;
+                          alpha_grid = (PI/180.0)*B4;
                           clear(c,numint);
-						 break;
+						 break;*/
                 case 5: control>>B5;
                           clear(c,numint);
 						 break;
