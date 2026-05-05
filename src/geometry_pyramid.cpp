@@ -47,6 +47,22 @@ void geometry::pyramid(lexer *p, dive *a, int rank, int &ts, int &te, double **x
 	x5 = xyz[rank][12];
     y5 = xyz[rank][13];
     z5 = xyz[rank][14];
+    
+    
+    x1 = p->Xin(x1,y1);
+    y1 = p->Yin(x1,y1);
+    
+    x2 = p->Xin(x2,y2);
+    y2 = p->Yin(x2,y2);
+    
+    x3 = p->Xin(x3,y3);
+    y3 = p->Yin(x3,y3);
+    
+    x4 = p->Xin(x4,y4);
+    y4 = p->Yin(x4,y4);
+    
+    x5 = p->Xin(x5,y5);
+    y5 = p->Yin(x5,y5);
 
 
 	ts=p->tricount;

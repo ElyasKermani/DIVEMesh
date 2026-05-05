@@ -52,7 +52,24 @@ void geometry::wedge(lexer *p, dive *a, int rank, int &ts, int &te, double **xyz
     x6 = xyz[rank][15];
     y6 = xyz[rank][16];
     z6 = xyz[rank][17];
-
+    
+    x1 = p->Xin(x1,y1);
+    y1 = p->Yin(x1,y1);
+    
+    x2 = p->Xin(x2,y2);
+    y2 = p->Yin(x2,y2);
+    
+    x3 = p->Xin(x3,y3);
+    y3 = p->Yin(x3,y3);
+    
+    x4 = p->Xin(x4,y4);
+    y4 = p->Yin(x4,y4);
+    
+    x5 = p->Xin(x5,y5);
+    y5 = p->Yin(x5,y5);
+    
+    x6 = p->Xin(x6,y6);
+    y6 = p->Yin(x6,y6);
 
 	ts=p->tricount;
 
