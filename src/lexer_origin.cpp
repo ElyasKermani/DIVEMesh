@@ -68,6 +68,7 @@ void lexer::origin_calc()
 
 void lexer::origin_apply()
 {
+    /*if(B6==1)
     for(qn=0;qn<B10;++qn)
     {
     B10_xs[qn] -= global_orig_x;
@@ -75,6 +76,6 @@ void lexer::origin_apply()
     
     B10_ys[qn] -= global_orig_y;
     B10_ye[qn] -= global_orig_y;
-    }
+    }*/
 
 }

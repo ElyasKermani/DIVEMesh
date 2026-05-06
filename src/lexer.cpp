@@ -42,9 +42,10 @@ void lexer::read_input()
 	pre_read_stl();
     
     origin_calc();
-    origin_apply();
-	
+    
     read_control();
+    origin_apply();
+    
 	read_geodat();
 	read_data();
 }
