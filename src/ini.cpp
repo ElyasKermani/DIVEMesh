@@ -33,14 +33,15 @@ void lexer::ini_default()
 
     B1=0.0;         // double deltax
     B2=0;           // int cell size
-    B3=0;           // int global origin
-    B3_dx=0.0;      // int global origin_x
-    B3_dy=0.0;      // int global origin_y
     B2_knox=0;
     B2_knoy=0;
     B2_knoz=0;
+    B3=0;           // int global origin
+    B3_dx=0.0;      // int global origin_x
+    B3_dy=0.0;      // int global origin_y
     B4=0.0;         // double grid rotation alpha
-	B5=1;			// int turn on true 2D
+	B5=1;			// int turn on true 
+    B6=0;           // int turn on CMS
     B10=0;
     B101=0;         // int grid spacing xdir
     B102=0;         // int grid spacing ydir

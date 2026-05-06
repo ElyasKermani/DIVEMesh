@@ -99,7 +99,7 @@ public:
     int B2_knox,B2_knoy,B2_knoz;
     int B3;
     double B3_dx,B3_dy;
-    int B5,B10;
+    int B5,B6,B10;
     double *B10_xs,*B10_xe,*B10_ys,*B10_ye,*B10_zs,*B10_ze;
     
     int B101,B102,B103;

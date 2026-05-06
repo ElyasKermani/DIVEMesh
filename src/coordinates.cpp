@@ -36,6 +36,7 @@ double coordinates::Xin(double xworld, double yworld)
 {
     double xmodel=xworld;
     
+    if(p->B6==1)
     xmodel = (xworld-p->global_orig_x)*cos(-p->alpha_grid) - (yworld-p->global_orig_y)*sin(-p->alpha_grid);
     
     return xmodel;
@@ -45,6 +46,7 @@ double coordinates::Yin(double xworld, double yworld)
 {
     double ymodel=yworld;
     
+    if(p->B6==1)
     ymodel = (xworld-p->global_orig_x)*sin(-p->alpha_grid) + (yworld-p->global_orig_y)*cos(-p->alpha_grid);
     
     return ymodel;
@@ -54,6 +56,7 @@ double coordinates::Xout(double xmodel, double ymodel)
 {
     double xworld=xmodel;
     
+    if(p->B6==1)
     xworld = (xmodel)*cos(p->alpha_grid) - (ymodel)*sin(p->alpha_grid) + p->global_orig_x;
     
     return xworld;
@@ -63,6 +66,7 @@ double coordinates::Yout(double xmodel, double ymodel)
 {
     double yworld=ymodel;
     
+    if(p->B6==1)
     yworld = (xmodel)*sin(p->alpha_grid) + (ymodel)*cos(p->alpha_grid) + p->global_orig_y;
     
     return yworld;
