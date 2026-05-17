@@ -65,8 +65,7 @@ void lexer::read_stl()
 		if(word=="normal")
 		stl>>trivec_x[count]>>trivec_y[count]>>trivec_z[count];
         
-        trivec_x[count] = Xin(trivec_x[count],trivec_y[count]);
-        trivec_y[count] = Yin(trivec_x[count],trivec_y[count]);
+        XYin(trivec_x[count],trivec_y[count]);
 		
 		if(word=="vertex")
 		{

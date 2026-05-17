@@ -40,15 +40,14 @@ public:
 	virtual ~coordinates();
     
     // world to model
+    void XYin(double&,double&);
     double Xin(double,double);
     double Yin(double,double);
     
     // model to world
+    void XYout(double&,double&);
     double Xout(double,double);
     double Yout(double,double);
-    
-
-    
     
 private:
     lexer *p;
@@ -61,6 +60,8 @@ private:
     int is,ie,iloc;
     int js,je,jloc;
     int ks,ke,kloc;
+    
+    double Xtemp,Ytemp;
 
 };
 
