@@ -1,4 +1,10 @@
 
+26.05
+x added CMS grid system (grid rotation and translation)
+x updated geodata interpolation
+x updated grid file format
+x added automatic selection of symmetry planes for 2D simulations
+
 26.01
 x added spatial geodat filter
 x added Gaussian kernel geodat interpolation
