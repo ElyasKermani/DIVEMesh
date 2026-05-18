@@ -75,7 +75,20 @@ void lexer::gridspacing()
     
     cout<<"DR: "<<DR<<" DS: "<<DS<<" DT: "<<DT<<endl;
 
+    if(B6==0)
+    {
+    for(i=0;i<knox+1;++i)
+    XN[IP] = double(i)*ddx + xmin;
     
+    for(j=0;j<knoy+1;++j)
+    YN[JP] = double(j)*ddy + ymin;
+    
+    for(k=0;k<knoz+1;++k)
+    ZN[KP] = double(k)*ddz + zmin;
+    }
+    
+    if(B6==1)
+    {
     for(i=0;i<knox+1;++i)
     XN[IP] = double(i)*ddx;
     
@@ -83,7 +96,8 @@ void lexer::gridspacing()
     YN[JP] = double(j)*ddy;
     
     for(k=0;k<knoz+1;++k)
-    ZN[KP] = double(k)*ddz;
+    ZN[KP] = double(k)*ddz + zmin;
+    }
     
     cout<<".";
     

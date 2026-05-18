@@ -389,7 +389,7 @@ void print_grid::start(lexer* p,dive* a)
         iin = p->porousprint;    // write porous // dead
         std::memcpy(&buffer[m],&iin,sizeof(int));
         m+=sizeof(int);
-        iin = 0; // dead
+        iin = p->B6; // CMS on/off
         std::memcpy(&buffer[m],&iin,sizeof(int));
         m+=sizeof(int);  
         iin = 0; // dead

@@ -148,10 +148,10 @@ void print_stl::solid_vtp(lexer* p, dive* a)
     for(n=0;n<p->tricount;++n)
 	for(q=0;q<3;++q)
 	{
-	ddn=p->tri_x[n][q];
+	ddn=p->Xout(p->tri_x[n][q],p->tri_y[n][q]);
 	result.write((char*)&ddn, sizeof (double));
 
-	ddn=p->tri_y[n][q];
+	ddn=p->Yout(p->tri_x[n][q],p->tri_y[n][q]);
 	result.write((char*)&ddn, sizeof (double));
 
 	ddn=p->tri_z[n][q];

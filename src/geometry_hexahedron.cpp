@@ -60,6 +60,31 @@ void geometry::hexahedron(lexer *p, dive *a, int rank, int &ts, int &te, double 
 	x8 = xyz[rank][21];
     y8 = xyz[rank][22];
     z8 = xyz[rank][23];
+    
+    
+    x1 = p->Xin(x1,y1);
+    y1 = p->Yin(x1,y1);
+    
+    x2 = p->Xin(x2,y2);
+    y2 = p->Yin(x2,y2);
+    
+    x3 = p->Xin(x3,y3);
+    y3 = p->Yin(x3,y3);
+    
+    x4 = p->Xin(x4,y4);
+    y4 = p->Yin(x4,y4);
+    
+    x5 = p->Xin(x5,y5);
+    y5 = p->Yin(x5,y5);
+    
+    x6 = p->Xin(x6,y6);
+    y6 = p->Yin(x6,y6);
+    
+    x7 = p->Xin(x7,y7);
+    y7 = p->Yin(x7,y7);
+    
+    x8 = p->Xin(x8,y8);
+    y8 = p->Yin(x8,y8);
 	
 	ts=p->tricount;
 	
