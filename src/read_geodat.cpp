@@ -176,8 +176,15 @@ void lexer::read_geodat()
         }
         
 
+         double Gx,Gy;
         for(n=0;n<G10;++n)
-        XYin(G10_x[n],G10_y[n]);
+        {
+        Gx = Xin(G10_x[n],G10_y[n]);
+        Gy = Yin(G10_x[n],G10_y[n]);
+        
+        G10_x[n] = Gx;
+        G10_y[n] = Gy;
+        }
 
         
     
